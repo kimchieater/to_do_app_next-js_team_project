@@ -57,3 +57,14 @@ You can just create new folders and put page.tsx inside.
 so for my Nav bar, First I'm going to create src/app/components/nav/page.tsx
 
 ![alt text](image-2.png)
+
+
+
+
+### Clerk
+
+Clerk is an Authentication Libarary for Authentication and User Management.
+
+
+first 
+

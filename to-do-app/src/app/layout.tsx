@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/page";
 import Footer from "./components/footer/page";
-
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 export const metadata: Metadata = {
@@ -17,12 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
-      <body className="h-screen overflow-y-hidden mx-auto w-[1450px]"> 
-        <Nav></Nav>
-        {children}
-        <Footer></Footer>
-        </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" >
+        <body className="h-screen overflow-y-hidden mx-auto w-[1450px]"> 
+          <Nav></Nav>
+          {children}
+          <Footer></Footer>
+          </body>
+      </html>
+    </ClerkProvider>
   );
 }
