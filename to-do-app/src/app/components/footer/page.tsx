@@ -3,7 +3,7 @@
 const Footer = ()=>{
   return(
     <div className="justify-center flex mt-20">
-      Footer
+      copyright @ TeamAngryCats
     </div>
   )
 }
