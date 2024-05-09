@@ -19,6 +19,20 @@ To contribute to the project, first clone the repo using git, then in terminal t
 We'll be using ReactJS, NextJS, Tailwind(CSS), Strapi(Database/API), Clerk(Auth).
 
 
+### things to know before...
+
+Before we dive in, It will be helpful to understand
+
+SSR, CSR 
+JSX 
+React component architecture 
+React Hooks (useState, useEffect, useRef and etc but those three for sure)
+JavaScript ES6 
+Javascript Array Methods 
+Objects
+
+
+
 ## 09/05/24
 
 I have first set up for NextJS by typing in terminal 

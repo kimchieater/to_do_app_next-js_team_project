@@ -25,7 +25,9 @@ export default function Home() {
       </section>
       <div className="flex justify-center mt-10 gap-5 items-center">
         <input type="text" name="to-do" className="p-5 border-solid border-2 border-slate-700 rounded-md"></input>
-        <button type="submit" className="bg-stone-950 p-5 rounded-xl text-stone-100">Submit</button>
+        <button type="submit" onSubmit={()=>{
+          console.log("hELLO");
+        }}className="bg-stone-950 p-5 rounded-xl text-stone-100">Submit</button>
 
       </div>
     </div>
