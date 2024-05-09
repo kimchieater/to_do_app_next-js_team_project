@@ -48,5 +48,12 @@ When you want a lot of restriction and performance, You'll use Server component.
 
 and also for SEO purpose, In general, You want big components to be server, and smaller (like nav bar, button) to be client. 
 
+### Organising your routes
 
+In NextJS, Unlike ReactJS, You don't need to use react-dom-router.
 
+You can just create new folders and put page.tsx inside.
+
+so for my Nav bar, First I'm going to create src/app/components/nav/page.tsx
+
+![alt text](image-2.png)

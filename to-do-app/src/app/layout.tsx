@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Nav from "./components/page";
+import Footer from "./components/footer/page";
 
-const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Team Angry Cats Todo App",
@@ -15,8 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" >
+      <body className="h-screen overflow-y-hidden mx-auto w-[1450px]"> 
+        <Nav></Nav>
+        {children}
+        <Footer></Footer>
+        </body>
     </html>
   );
 }
