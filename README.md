@@ -66,5 +66,15 @@ so for my Nav bar, First I'm going to create src/app/components/nav/page.tsx
 Clerk is an Authentication Libarary for Authentication and User Management.
 
 
-first 
+#### first 
+
+install clerk 
+
+
+![alt text](image-3.png)
+
+Then You need to create .env.local file in your to-do-app 
+
+![alt text](image-4.png)
+
 
