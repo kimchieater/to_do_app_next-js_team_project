@@ -1,11 +1,16 @@
 'use client'
 
+import { UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link"
 import { useState, useLayoutEffect } from "react";
 
 
 
+
 const Nav = ()=>{
+// checking for user
+  const {isLoaded, isSignedIn, user} = useUser();
+
 
   useLayoutEffect(()=>{
     getMonthAndDay()
@@ -47,8 +52,21 @@ const Nav = ()=>{
       <Link href="/">{day} {date}th {month} <span className="text-neutral-500">{year}</span></Link>
       </div>
       <div className="flex-[1] flex justify-end gap-5">
-      <Link className=" bg-neutral-400 text-stone-100 p-2 rounded-xl hover:bg-stone-700 shadow-xl shadow-neutral-900/3" href="/sign-in" >Sign In</Link>
-      <Link className=" bg-neutral-400 text-stone-100 p-2 rounded-xl hover:bg-stone-700 shadow-xl shadow-neutral-900/3" href="/sign-up" >Sign Up</Link>
+        {/* Checks if the user is logged in or not. */}
+        {
+          isSignedIn ? (
+          <div className="flex items-center gap-2 bg-neutral-300 rounded-lg p-2 shadow-md shadow-neutral-400/3">
+            {user?.username} <UserButton></UserButton>
+          </div>
+        ) 
+        : (
+        <div className="flex gap-2">
+          <Link className=" bg-neutral-400 text-stone-100 p-2 rounded-xl hover:bg-stone-700 shadow-md shadow-neutral-900/6" href="/sign-in" >Sign In</Link>
+          <Link className=" bg-neutral-400 text-stone-100 p-2 rounded-xl hover:bg-stone-700 shadow-xl shadow-neutral-900/3" href="/sign-up" >Sign Up</Link>
+        </div>
+          )
+        }
+      
       </div>
     </div>
   )

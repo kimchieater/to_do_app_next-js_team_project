@@ -1,35 +1,17 @@
-"use client"
-
-import Image from "next/image";
-import Footer from "./components/footer/page";
-import {useState} from "react";
+import { auth } from "@clerk/nextjs/server";
+import UserInfo from "./userInfo/page";
 
 
-export default function Home() {
 
-  let [lists, setLists] = useState(["Study React", "Study NextJs", "Hello World"]);
+export default async function Home() {
+
+  const {userId} = auth();
+
 
 
   return (
-    <div className="bg-neutral-100 p-20 rounded-xl shadow-lg shadow-neutral-600/2">
-      <div className="flex justify-center mt-10 gap-5 items-center">
-        <input type="text" name="to-do" placeholder="Add new task" className="p-2 outline-none bg-neutral-200 shadow-lg shadow-neutral-950/3 rounded-md"></input>
-        <button type="submit" onClick={()=>{
-          console.log("hELLO");
-        }}className="bg-neutral-500 px-5 py-2 rounded-xl text-neutral-100 hover:bg-neutral-700">+</button>
-
-      </div>
-      <section className="">
-        <ul className="flex flex-col items-center p-20 gap-2 text-xl text-neutral-600">
-          {
-            lists.map((a, i)=>{
-              return(
-                <li className="border-b-2">{a}<span className="cursor-pointer">🗑️</span></li>
-              )
-            })
-          }
-        </ul>
-      </section>
+    <div className= "mt-5 bg-neutral-100 p-4 rounded-xl shadow-lg shadow-neutral-600/2 min-h-[550px]">
+      <UserInfo></UserInfo>
       
     </div>
   );
