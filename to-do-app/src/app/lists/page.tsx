@@ -21,7 +21,7 @@ const Lists = ()=>{
           {
             lists.map((a, i)=>{
               return(
-                <li className="border-b-2">{a}<span className="cursor-pointer">🗑️</span></li>
+                <li key={i} className="border-b-2">{a}<span className="cursor-pointer">🗑️</span></li>
               )
             })
           }
