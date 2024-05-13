@@ -17,17 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+  
       <html lang="en" >
-        <body className="h-screen overflow-y-hidden mx-auto w-[1450px] bg-neutral-300 p-10 "> 
+        <ClerkProvider>
+        <body className="h-screen overflow-y-hidden mx-auto w-[1450px] bg-neutral-300 p-10 ">  
         <div className="p-10 bg-neutral-200 rounded-xl shadow-lg shadow-neutral-700/3 max-h-[800px]">
           <Nav></Nav>
           {children}
           <Footer></Footer>
           </div>
           </body>
-        
+            </ClerkProvider>
       </html>
-    </ClerkProvider>
+
   );
 }
