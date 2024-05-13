@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "./components/nav/page";
 import Footer from "./components/footer/page";
 import { ClerkProvider } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 
 const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_FRONTEND_API;
 
@@ -18,19 +19,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+
+  const {userId} = auth();
+
   
+
+
+  return (
+          <ClerkProvider>
       <html lang="en" >
-        <ClerkProvider>
+
         <body className="h-screen overflow-y-hidden mx-auto w-[1450px] bg-neutral-300 p-10 ">  
         <div className="p-10 bg-neutral-200 rounded-xl shadow-lg shadow-neutral-700/3 max-h-[800px]">
           <Nav></Nav>
           {children}
-          <Footer frontendApi={clerkFrontendApi}></Footer>
+          <Footer></Footer>
           </div>
           </body>
-            </ClerkProvider>
+
       </html>
+                  </ClerkProvider>
 
   );
 }
