@@ -15,7 +15,7 @@ const Nav = ()=>{
   useLayoutEffect(()=>{
     getMonthAndDay()
     console.log("mounted");
-  },[])
+  })
 
   //array for the months and day
   let months : string[] = ["Jan", "Feb", "Mar", "Apr", "May","Jun", "Jul", "Aug", "Sep", "Oct","Nov","Dec"];
