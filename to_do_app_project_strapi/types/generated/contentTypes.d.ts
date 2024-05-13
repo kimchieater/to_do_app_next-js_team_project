@@ -374,8 +374,10 @@ export interface ApiTodoTodo extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    todo: Attribute.String;
-    date: Attribute.Date;
+    do: Attribute.String;
+    dueDate: Attribute.Date;
+    completed: Attribute.Boolean & Attribute.DefaultTo<false>;
+    createdDate: Attribute.Date;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

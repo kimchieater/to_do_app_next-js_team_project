@@ -12,10 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "todo": {
+    "do": {
       "type": "string"
     },
-    "date": {
+    "dueDate": {
+      "type": "date"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "createdDate": {
       "type": "date"
     }
   }

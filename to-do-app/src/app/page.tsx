@@ -3,6 +3,10 @@ import UserInfo from "./userInfo/page";
 
 
 
+
+
+
+
 export default async function Home() {
 
   const {userId} = auth();
