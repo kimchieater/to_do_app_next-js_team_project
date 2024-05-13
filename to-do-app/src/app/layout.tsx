@@ -5,6 +5,8 @@ import Nav from "./components/nav/page";
 import Footer from "./components/footer/page";
 import { ClerkProvider } from "@clerk/nextjs";
 
+const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_FRONTEND_API;
+
 
 export const metadata: Metadata = {
   title: "Team Angry Cats Todo App",
@@ -24,7 +26,7 @@ export default function RootLayout({
         <div className="p-10 bg-neutral-200 rounded-xl shadow-lg shadow-neutral-700/3 max-h-[800px]">
           <Nav></Nav>
           {children}
-          <Footer></Footer>
+          <Footer frontendApi={clerkFrontendApi}></Footer>
           </div>
           </body>
             </ClerkProvider>
