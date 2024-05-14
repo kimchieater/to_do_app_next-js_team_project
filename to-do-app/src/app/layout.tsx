@@ -18,18 +18,13 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-  pageProps:any;
 }>) {
 
   const {userId} = auth();
 
-
-
-
   return (
       <ClerkProvider>
       <html lang="en" >
-
         <body className="h-screen overflow-y-hidden mx-auto w-[1450px] bg-neutral-300 p-10 ">  
         <div className="p-10 bg-neutral-200 rounded-xl shadow-lg shadow-neutral-700/3 max-h-[800px]">
           <Nav></Nav>
@@ -37,7 +32,6 @@ export default function RootLayout({
           <Footer></Footer>
           </div>
           </body>
-
       </html>
       </ClerkProvider>
 
