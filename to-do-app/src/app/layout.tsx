@@ -18,6 +18,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
+  pageProps:any;
 }>) {
 
   const {userId} = auth();
@@ -26,9 +27,7 @@ export default function RootLayout({
 
 
   return (
-      <ClerkProvider
-      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
-      >
+      <ClerkProvider>
       <html lang="en" >
 
         <body className="h-screen overflow-y-hidden mx-auto w-[1450px] bg-neutral-300 p-10 ">  
