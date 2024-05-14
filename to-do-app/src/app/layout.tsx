@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/nav/page";
 import Footer from "./components/footer/page";
 import { ClerkProvider } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 
-const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_FRONTEND_API;
 
 
 export const metadata: Metadata = {
   title: "Team Angry Cats Todo App",
   description: "This is a single page application for todo app",
 };
+
+
 
 export default function RootLayout({
   children,
@@ -22,11 +22,13 @@ export default function RootLayout({
 
   const {userId} = auth();
 
-  
+
 
 
   return (
-          <ClerkProvider>
+      <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+      >
       <html lang="en" >
 
         <body className="h-screen overflow-y-hidden mx-auto w-[1450px] bg-neutral-300 p-10 ">  
@@ -38,7 +40,7 @@ export default function RootLayout({
           </body>
 
       </html>
-                  </ClerkProvider>
+      </ClerkProvider>
 
   );
 }
